@@ -2,7 +2,7 @@ import UserCard from "@/components/cards/UserCard";
 import Filter from "@/components/shared/Filter";
 import LocalSearchBar from "@/components/shared/search/localSearch";
 import { UserFilters } from "@/constants/filters";
-import { getAllUsers } from "@/lib/actions/question.action";
+import { getAllUsers } from "@/lib/actions/user.action";
 import Link from "next/link";
 const page = async () => {
   const result = await getAllUsers({});
