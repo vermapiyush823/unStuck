@@ -319,16 +319,6 @@ export async function getUserInfo(params: GetUserByIdParams) {
         count: questionViews?.totalViews || 0,
       },
     ];
-
-    const badgeCounts = assignBadges({ criteria });
-
-    return {
-      user,
-      totalQuestions,
-      totalAnswers,
-      badgeCounts,
-      reputation: user.reputation,
-    };
   } catch (error) {
     console.log(error);
     throw error;
