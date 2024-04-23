@@ -6,6 +6,7 @@ import Link from "next/link";
 import Filter from "./Filter";
 import Pagination from "./Pagination";
 import ParseHTML from "./ParseHTML";
+import Votes from "./Votes";
 
 interface Props {
   questionId: string;
@@ -61,7 +62,18 @@ const AllAnswers = async ({
                   </p>
                 </div>
               </Link>
-              <div className="flex justify-end">VOTES</div>
+              <div className="flex justify-end">
+                <Votes
+                  type="Answer"
+                  itemId={JSON.stringify(answer._id)}
+                  userId={JSON.stringify(userId)}
+                  upvotes={answer.upvotes.length}
+                  hasupVoted={answer.upvotes.includes(userId)}
+                  downvotes={answer.downvotes.length}
+                  hasdownVoted={answer.downvotes.includes(userId)}
+                  hasSaved={false}
+                />
+              </div>
             </div>
             <ParseHTML data={answer.content} />
           </article>
