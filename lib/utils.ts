@@ -30,3 +30,10 @@ export const formatAndDivideNumber = (num: number): string => {
   if (num < 1000000) return `${(num / 1000).toFixed(1)}k`;
   return `${(num / 1000000).toFixed(1)}m`;
 };
+
+// get the javascript date object as a parameter and return a joined date(just the month and year)
+export const getJoinedDate = (date: Date): string => {
+  const month = date.toLocaleString("default", { month: "long" });
+  const year = date.getFullYear();
+  return `${month} ${year}`;
+};

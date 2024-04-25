@@ -319,6 +319,7 @@ export async function getUserInfo(params: GetUserByIdParams) {
         count: questionViews?.totalViews || 0,
       },
     ];
+    return { user, totalQuestions, totalAnswers, criteria };
   } catch (error) {
     console.log(error);
     throw error;
