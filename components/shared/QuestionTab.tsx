@@ -24,6 +24,7 @@ const QuestionTab = async ({ userId, clerkId }: Props) => {
             author={question.author}
             upvotes={question.upvotes}
             views={question.views}
+            clerkId={clerkId}
             answers={question.answers}
             createdAt={question.createdAt}
           />
